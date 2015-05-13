@@ -1,0 +1,93 @@
+
+body {
+    background-color: #E6E6E6;
+}
+
+.app {
+  float: left;
+  padding: 5px;
+}
+
+.board {
+  margin: auto;
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+}
+
+.msgwindow {
+  padding: 5px;
+  text-align: center;
+}
+
+.cell {
+  background-color: #9A8297;
+  margin: 5px;
+  width: 90px;
+  height: 90px;
+  position: relative;
+  transition: background .25s ease-in-out;
+  -moz-transition: background .25s ease-in-out;
+  -webkit-transition: background .25s ease-in-out;
+}
+
+.cell:hover {
+  background-color: #D0782A;
+}
+
+.cell.win {
+  background-color: #8AC287;
+}
+
+.cross {
+  background: red;
+  height: 90px;
+  position: relative;
+  left: 40px;
+  width: 10px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.cross:after {
+  background: red;
+  content: "";
+  height: 10px;
+  left: -40px;
+  position: absolute;
+  top: 42px;
+  width: 90px;
+}
+
+.circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    top: 10px;
+    border: 10px solid blue;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+}
+
+.circle.over {
+    border: 10px solid lightblue;
+}
+
+.cross.over {
+   background: lightcoral;
+}
+
+.cross.over:after {
+   background: lightcoral;
+}
