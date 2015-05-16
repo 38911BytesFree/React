@@ -46,7 +46,8 @@ var MsgWindow = React.createClass({
   getInitialState: function(){
     return {hovered: false};
   },
-  handleClick: function() {
+  handleClick: function(e) {
+    e.preventDefault();
     var gs = this.props.gamestate;
     if(gs == GSXWon || gs == GSOWon || gs == GSDraw)
       this.props.clicked();

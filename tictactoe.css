@@ -21,11 +21,13 @@ body {
 }
 
 .msgwindow {
+  cursor: pointer;
   padding: 5px;
   text-align: center;
 }
 
 .cell {
+  cursor: pointer;
   background-color: #9A8297;
   margin: 5px;
   width: 90px;
