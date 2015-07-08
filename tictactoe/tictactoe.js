@@ -116,8 +116,10 @@ var App = React.createClass({
       board: { TL:'', TM:'', TR:'', ML:'', MM:'', MR:'', BL:'', BM:'', BR:'' }};
   },
   flashrow: function() {
-    var newboard = aiFlashWinRow(this.state.board);
-    this.setState({ board: newboard });
+    if (this.state.gamestate == GSXWon || this.state.gamestate == GSOWon) {
+      var newboard = aiFlashWinRow(this.state.board);
+      this.setState({ board: newboard });
+    }
   },
   resetGame: function() {
     clearInterval(this.interval);
@@ -127,7 +129,7 @@ var App = React.createClass({
     var oldsym = this.state.board[id]; if(oldsym!='') { return; }
     var newboard = calcNewBoard(id,this.state.gamestate,this.state.board);
     var newgamestate = calcNewGameState(this.state.gamestate,newboard);
-    if (newgamestate == GSXWon || newgamestate == GSOWon) {
+    if (newgamestate != this.state.gamestate && (newgamestate == GSXWon || newgamestate == GSOWon)) {
       this.flashrow();
       this.interval = setInterval(this.flashrow, 1000);
     }
