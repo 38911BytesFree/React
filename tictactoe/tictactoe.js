@@ -1,10 +1,6 @@
-/** @jsx React.DOM */
-
 'use strict'
 
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-
-React.initializeTouchEvents(true);
 
 //////////////////////////////////////////////////////////////////////////////
 // Class Tile
@@ -151,4 +147,4 @@ var App = React.createClass({
   }
 })
 
-React.render(<App />, document.body);
+ReactDOM.render(<App />, document.getElementById('app'));
